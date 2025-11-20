@@ -78,7 +78,6 @@ ESTRUCTURAS DE DATOS UTILIZADAS
 - Grafo → red de servidores (adyacencia)
 - BFS / DFS → algoritmos de búsqueda y recorrido
 
----------------------------------------------------
 +------------------+
 |     Usuario      |
 +------------------+
@@ -130,5 +129,6 @@ ESTRUCTURAS DE DATOS UTILIZADAS
 | +registrar_usuario()|
 | +enviar_mensaje()   |
 +------------------+
+
 
 
