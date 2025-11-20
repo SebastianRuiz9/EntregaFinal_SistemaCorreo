@@ -80,56 +80,56 @@ ESTRUCTURAS DE DATOS UTILIZADAS
 
 ---------------------------------------------------
 
-Diagrama
+            +----------------+
+            |    Usuario    |
+            +----------------+
+            | - _nombre     |
+            | - _email      |
+            | - _carpetas   |
+            +----------------+
+            | + nombre      |
+            | + email       |
+            | + enviar_mensaje() |
+            | + listar_mensajes() |
+            +----------------+
+                    |
+                    | usa
+                    v
+            +----------------+
+            | ServidorCorreo |
+            +----------------+
+            | - _usuarios    |
+            +----------------+
+            | + registrar_usuario() |
+            | + enviar_mensaje()    |
+            +----------------+
 
-+------------------+
-|     Usuario      |
-+------------------+
-| - __nombre       |
-| - __email        |
-| - __carpetas     |
-+------------------+
-| +nombre          |
-| +email           |
-| +enviar_mensaje()|
-| +listar_mensajes()|
-+------------------+
-        |
-        | contiene
-        v
-+------------------+
-|     Carpeta      |
-+------------------+
-| - __nombre       |
-| - __mensajes     |
-+------------------+
-| +agregar_mensaje()|
-| +listar_mensajes()|
-+------------------+
-        |
-        | contiene
-        v
-+------------------+
-|     Mensaje      |
-+------------------+
-| - __remitente    |
-| - __destinatario |
-| - __asunto       |
-| - __cuerpo       |
-+------------------+
-| +remitente       |
-| +destinatario    |
-| +asunto          |
-| +cuerpo          |
-+------------------+
-        ^
-        | usa
-        |
-+------------------+
-| ServidorCorreo   |
-+------------------+
-| - __usuarios     |
-+------------------+
-| +registrar_usuario()|
-| +enviar_mensaje()   |
-+------------------+
+                    |
+                    | contiene
+                    v
+            +----------------+
+            |    Carpeta    |
+            +----------------+
+            | - _nombre     |
+            | - _mensajes   |
+            +----------------+
+            | + agregar_mensaje() |
+            | + listar_mensajes() |
+            | + subcarpetas       |
+            +----------------+
+                    |
+                    | contiene
+                    v
+            +----------------+
+            |    Mensaje    |
+            +----------------+
+            | - _remitente  |
+            | - _destinatario |
+            | - _asunto      |
+            | - _cuerpo      |
+            +----------------+
+            | + remitente   |
+            | + destinatario|
+            | + asunto      |
+            | + cuerpo      |
+            +----------------+
