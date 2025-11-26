@@ -231,11 +231,13 @@ class ColaPrioridades:
 
     def __init__(self):
         self._heap: List[Tuple[int, Mensaje]] = []
+        self._contador = 0
 
     # --- Inserta un mensaje al heap junto con su nivel de prioridad ---
     def agregar(self, mensaje: Mensaje) -> None:
         prioridad_num = self._valor.get(mensaje.prioridad, 2)
-        heapq.heappush(self._heap, (prioridad_num, mensaje))
+        heapq.heappush(self._heap, (prioridad_num, self._contador, mensaje))
+        self._contador += 1
 
     # --- EXTRAE Y RETORNA EL MENSAJE CON MAYOR PRIORIDAD ---
     def procesar(self) -> Optional[Mensaje]:
@@ -694,3 +696,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
